@@ -1,0 +1,14 @@
+.optionMenu{
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+a.link:focus > div.optionMenu, a.link:hover > div.optionMenu {
+    color: #ed4b5f !important;
+    background:  #fce1e6e6;
+}
+
+a:hover {
+    text-decoration: none;
+}

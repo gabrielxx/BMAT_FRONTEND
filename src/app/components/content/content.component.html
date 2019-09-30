@@ -1,0 +1,90 @@
+<div class="row mt-3">
+  <div class="col-md-6">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text bg-gray iconStyle">
+          <i class="fas fa-search text-muted fz-2"></i>
+        </span>
+      </div>
+      <input type="text" [(ngModel)]="filter" class="form-control bg-gray inputStyle" (keyup)="onSearch()"
+        placeholder="Search Programs" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-12 col-12 ">
+    <div class="row p-2 d-flex justify-content-end">
+      <button class="btn btn-link col-md-1 col-1 col-sm-1">
+        <i class="fas fa-chevron-left fz-2 text-muted pr-0"></i>
+      </button>
+      <div class="col-md-5 col-sm-10 col-10 input-group border-box">
+        <div class="input-group-prepend ">
+          <button class="btn btn-link" type="button"><i class="far fa-calendar-alt text-muted"></i></button>
+        </div>
+        <select class='form-control border-0 font-weight-bold' disabled>
+          <option value="">
+            October 2018
+          </option>
+        </select>
+      </div>
+      <button class="btn btn-link col-md-1 col-1 col-sm-1 pl-0">
+        <i class="fas fa-chevron-right fz-2 text-muted"></i>
+      </button>
+    </div>
+  </div>
+  <div class="col-md-6 pt-3 text-muted pl-3">
+    Sort by: Programm
+    <button class="btn btn-link mr-2">
+      <i class="fas fa-arrow-down fz-2 text-muted"></i>
+    </button>
+  </div>
+  <div class="col-md-6 text-right pr-2 pt-3">
+    <button class="btn btn-link mr-2">
+      <i class="fas fa-sliders-h fz-2 text-muted"></i>
+    </button>
+    <button class="btn btn-link mr-1">
+      <i class="fas fa-columns fz-2 text-muted"></i>
+    </button>
+  </div>
+  <div class="col-md-12 mt-2">
+    <table class="table table-hover">
+      <tbody>
+        <tr *ngIf="loading">
+          <td class="text-center valignMiddle" height="200px" colspan="4">
+            <div class="spinner-border text-primary" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <span class="h5 text-primary ml-3">Loading...</span>
+          </td>
+        </tr>
+        <tr *ngFor="let programs of programs">
+          <td>
+            <div class="ml-3">
+              <b>{{programs.name}}</b>
+              <span class="text-muted subContent">{{programs.date}}</span>
+            </div>
+          </td>
+          <td>
+            {{programs.group}}
+            <span class="text-muted subContent">{{programs.groupType}}</span>
+          </td>
+          <td>{{programs.sentItems}} / {{programs.validatedItems}}
+            <span *ngIf="programs.errors > 0" class="text-danger subContent">
+              <i class="fas fa-exclamation-circle"></i>
+              {{programs.errors}}
+            </span>
+          </td>
+          <td class='valignMiddle text-center'>
+            <button class="btn btn-link">
+              <i class="fas fa-cloud-download-alt text-muted fz-2"></i>
+            </button>
+            <button class="btn btn-link">
+              <i class="fas fa-paper-plane text-muted fz-2"></i>
+              <span class="badge badge-light p-0" *ngIf="!programs.errors">
+                <i class="fas fa-check-circle text-success"></i>
+              </span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

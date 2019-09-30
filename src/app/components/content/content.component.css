@@ -1,0 +1,38 @@
+.bg-gray{
+    background-color: #f1f1f1eb !important;
+}
+.iconStyle{
+    border-color: #f1f1f1eb;
+    border-radius: none;
+}
+.inputStyle{
+    border-color: #f1f1f1eb;
+    border-radius: none;
+    padding: 25px;
+}
+.form-control:focus{
+    border-color: transparent;
+    box-shadow: initial;
+}
+.fz-2{
+    font-size: 1.3rem;
+}
+.valignMiddle{
+    vertical-align: middle;
+}
+table{
+    box-shadow:1px 1px 4px 2px #adacacde;
+}
+td{
+    width: 25%;
+}
+.border-box{
+    box-shadow: 3px 3px #f1f1f1;
+    border: solid 1px #cacaca;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: initial; 
+}
+span.subContent::before { 
+    content: '\A'; white-space: pre;
+}
