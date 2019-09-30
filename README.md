@@ -9,4 +9,4 @@ Ejecutar el Comando `NPM INSTALL`
 Ejecutar el comando `ng serve` para habilitar el servidor de desarrollo. 
 
 ## Acesso al aplicación 
-Navegue mediante al navegador a la siguiente url `http: // localhost: 4200 /`.
+Navegue mediante al navegador a la siguiente url `http://localhost:4200/`.
